@@ -2,20 +2,20 @@ from django.shortcuts import render
 
 
 def gallery(request):
-    return render(request, 'gallery.html')
+    return render(request, 'mainapp/gallery.html')
 
 
 def assasin(request):
-    return render(request, "assasin's_creed.html")
+    return render(request, "mainapp/assasin's_creed.html")
 
 
 def ryse(request):
-    return render(request, 'ryse.html')
+    return render(request, 'mainapp/ryse.html')
 
 
 def tomb_raider(request):
-    return render(request, 'tomb_raider.html')
+    return render(request, 'mainapp/tomb_raider.html')
 
 
 def warcraft(request):
-    return render(request, 'warcraft.html')
+    return render(request, 'mainapp/warcraft.html')

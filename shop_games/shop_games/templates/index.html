@@ -1,13 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/shop_games/style.css" />
+    <link rel="stylesheet" href="{% static 'shop_games/style.css' %}" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto+Condensed:wght@300;400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/static/shop_games/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'shop_games/font-awesome-4.7.0/css/font-awesome.min.css' %}">
     <script>
         window.onload = function () {
             document.body.classList.add('loaded_hiding');
@@ -133,17 +134,17 @@
             </div>
             <div><img src="/static/shop_games/img/51K8FfZ39aL.jpg" alt="">
                 <span>Tomb Raider</span>
-                <a href="tomb_raide.html"><div class="buy">Buy</div></a>
+                <a href="gallery/tomb_raider/"><div class="buy">Buy</div></a>
             </div>
             <div>
                 <img src="/static/shop_games/img/fc0fe7ba3b8e092e2ae941b054852d47.jpg" alt="Ryse: Son Of Rome">
                 <span>Ryse: Son Of Rome</span>
-                <a href="ryse.html"><div class="buy">Buy</div></a>
+                <a href="gallery/ryse/"><div class="buy">Buy</div></a>
             </div>
             <div>
                 <img src="/static/shop_games/img/91fvOxYmFnL.jpg" alt="World Of Warcraft: Wrath Of The Linch King">
                 <span>World Of Warcraft: </span><span class="name-game">Wrath Of The Linch King</span>
-                <a href="warcraft.html"><div class="buy buy-new">Buy</div></a>
+                <a href="gallery/warcraft/"><div class="buy buy-new">Buy</div></a>
             </div>
         </div>
 

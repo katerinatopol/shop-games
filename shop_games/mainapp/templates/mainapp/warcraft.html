@@ -1,15 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/shop_games/style.css" />
+    <link rel="stylesheet" href="{% static 'shop_games/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'mainapp/style.css' %}" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto+Condensed:wght@300;400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/static/shop_games/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'shop_games/font-awesome-4.7.0/css/font-awesome.min.css' %}">
     <script>
         window.onload = function () {
             document.body.classList.add('loaded_hiding');
@@ -20,7 +22,7 @@
         }
     </script>
 
-    <title>Tomb Raider</title>
+    <title>World Of Warcraft</title>
 </head>
 
 <body>
@@ -39,7 +41,7 @@
                 <div class="name vertical">
                     <p class="name-1">Historical
                     <p class="name-2">GAMES</p>
-
+   
                 </div>
                 <div class="vertical nav-line-img"><img src="/static/shop_games/img/tel_76.png" alt="tel"></div>
                 <div class="vertical"><a class="telephon" href="tel:1234567890">+123 456 7890</a></div>
@@ -82,18 +84,18 @@
 
                 <div id="fsLinks">
                     <a href="/static/shop_games/img/assassin/1.jpg"
-                        onclick="return Show_picture( '/static/shop_games/img/tomb_raider/tr_1.jpg', 600, 400 )"><img class="mini-img" src="/static/shop_games/img/tomb_raider/tr_1.jpg" alt="min"></a>
+                        onclick="return Show_picture( '/static/shop_games/img/world_of_warcraft/wow_1.jpg', 600, 400 )"><img class="mini-img" src="/static/shop_games/img/world_of_warcraft/wow_1.jpg" alt="min"></a>
                     <a href="/static/shop_games/img/assassin/2.jpg"
-                        onclick="return Show_picture( '/static/shop_games/img/tomb_raider/tr_2.jpg', 600, 400 )"><img class="mini-img" src="/static/shop_games/img/tomb_raider/tr_2.jpg" alt="min"></a>
+                        onclick="return Show_picture( '/static/shop_games/img/world_of_warcraft/wow_2.jpg', 600, 400 )"><img class="mini-img" src="/static/shop_games/img/world_of_warcraft/wow_2.jpg" alt="min"></a>
                     <a href="/static/shop_games/img/assassin/3.jpg"
-                        onclick="return Show_picture( '/static/shop_games/img/tomb_raider/tr_3.jpg', 600, 400 )"><img class="mini-img" src="/static/shop_games/img/tomb_raider/tr_3.jpg" alt="min"></a>
+                        onclick="return Show_picture( '/static/shop_games/img/world_of_warcraft/wow_3.jpg', 600, 400 )"><img class="mini-img" src="/static/shop_games/img/world_of_warcraft/wow_3.jpg" alt="min"></a>
                     <a href="/static/shop_games/img/assassin/4.jpg"
-                        onclick="return Show_picture( '/static/shop_games/img/tomb_raider/tr_4.jpg', 600, 400 )"><img class="mini-img" src="/static/shop_games/img/tomb_raider/tr_4.jpg" alt="min"></a>
+                        onclick="return Show_picture( '/static/shop_games/img/world_of_warcraft/wow_4.jpg', 600, 400 )"><img class="mini-img" src="/static/shop_games/img/world_of_warcraft/wow_4.jpg" alt="min"></a>
                 </div>
             </div>
             <div class="text">
-                <span class="discount-games-black">Tomb Raider</span>
-                <p class="discount-games"> </p>
+                <span class="discount-games-black">World Of Warcraft:</span>
+                <p class="discount-games">Wrath Of The Linch King</p>
                 <span class="discount-price">$29.99</span>
                 <a href="#">
                     <div class="buy-product">Buy</div>
