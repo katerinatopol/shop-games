@@ -20,11 +20,11 @@ from .views import index, contacts, about, services, news, team
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('contacts/', contacts),
-    path('about/', about),
-    path('services/', services),
-    path('news/', news),
-    path('team/', team),
-    path('gallery/', include('mainapp.urls')),
+    path('', index, name="index"),
+    path('contacts/', contacts, name="contacts"),
+    path('about/', about, name="about"),
+    path('services/', services, name="services"),
+    path('news/', news, name="news"),
+    path('team/', team, name="team"),
+    path('gallery/', include('mainapp.urls', namespace="gallery")),
 ]

@@ -1,11 +1,12 @@
 from django.urls import path, include
 from .views import gallery, assasin, ryse, tomb_raider, warcraft
 
+app_name = "gallery"
 
 urlpatterns = [
-    path('', gallery),
-    path("assasin's_creed/", assasin),
-    path('ryse/', ryse),
-    path('tomb_raider/', tomb_raider),
-    path('warcraft/', warcraft),
+    path('', gallery, name="index"),
+    path("assasin's_creed/", assasin, name="assasin"),
+    path('ryse/', ryse, name="ryse"),
+    path('tomb_raider/', tomb_raider, name="tomb_raider"),
+    path('warcraft/', warcraft, name="warcraft"),
 ]
