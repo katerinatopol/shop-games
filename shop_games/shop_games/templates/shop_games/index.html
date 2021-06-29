@@ -1,0 +1,141 @@
+{% extends 'shop_games/base.html' %}
+{% load static %}
+
+{% block title %}Services{% endblock %}
+
+ {% block content %}
+    <!-- Верхний блок -->
+        <div class="sitebar">
+                <!-- Серая полоса -->
+                <div class="nav-line">
+                    <div class="name vertical">
+                        <p class="name-1">Historical
+                        <p class="name-2">GAMES</p>
+                    </div>
+                    <div class="vertical nav-line-img"><img src="/static/shop_games/img/tel_76.png" alt="tel"></div>
+                    <div class="vertical"><a class="telephon" href="tel:1234567890">+123 456 7890</a></div>
+
+                    <div class="vertical"><img src="/static/shop_games/img/email.png" alt="email"></div>
+                    <div class="vertical"><a class="email" href="mailto:info@example.com">info@example.com</a></div>
+                    <div class="search1 vertical">
+                        <div class="search">
+                            <form action="#">
+                                <input type="text" placeholder="Search">
+                                <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <!--<div class="search1 vertical">
+                        <div class="search">
+                            <a href="#">Search</a>
+                            <div><img src="img/search.png" alt="Search"></div>
+                        </div>
+                    </div>-->
+
+                </div>
+            <!-- Содержание верхнего блока -->
+            <div class="sitebar-content">
+                    <div class="menu"><ul>
+                        <li><a id="active" href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'services' %}">Services</a></li>
+                        <li><a href="{% url 'gallery:index' %}">Gallery</a></li>
+                        <li><a href="{% url 'news' %}">News</a></li>
+                        <li><a href="{% url 'team' %}">Team</a></li>
+                        <li><a href="{% url 'contacts' %}">Contact Us</a></li>
+                </ul></div>
+
+                <h4>Nunc eget nibh</h4>
+                <hr class="hr2">
+                <h1>Morbi in nisl auctor</h1>
+                <div class="social-block">
+                    <a href="http://facebook.com"><div class="social"><i class="fa fa-facebook" aria-hidden="true"></i></div></a>
+                    <a href="http://twitter.com"><div class="social"><i class="fa fa-twitter" aria-hidden="true"></i></div></a>
+                    <a href="http://rss.com"><div class="social"><i class="fa fa-rss" aria-hidden="true"></i></div></a>
+                    <a href="http://vk.com"><div class="social"><i class="fa fa-vk" aria-hidden="true"></i></div></a>
+                </div>
+            </div>
+        </div>
+
+{% include 'shop_games/includes/inc_about.html' %}
+{% include 'shop_games/includes/inc_services.html' %}
+
+        <!-- Our Gallery -->
+        <h2 style="margin-top: 95px;">Our Gallery</h2>
+        <div class="our-gallery">
+            <div><img src="/static/shop_games/img/71Ivm50PP7L._SL1273_1024x1024@2x.jpg" alt="Assasin’s Creed: Rogue">
+                <span>Assasin’s Creed: Rogue</span>
+                <a href="{% url 'gallery:assasin' %}"><div class="buy">Buy</div></a>
+            </div>
+            <div><img src="/static/shop_games/img/51K8FfZ39aL.jpg" alt="">
+                <span>Tomb Raider</span>
+                <a href="{% url 'gallery:tomb_raider' %}"><div class="buy">Buy</div></a>
+            </div>
+            <div>
+                <img src="/static/shop_games/img/fc0fe7ba3b8e092e2ae941b054852d47.jpg" alt="Ryse: Son Of Rome">
+                <span>Ryse: Son Of Rome</span>
+                <a href="{% url 'gallery:ryse' %}/"><div class="buy">Buy</div></a>
+            </div>
+            <div>
+                <img src="/static/shop_games/img/91fvOxYmFnL.jpg" alt="World Of Warcraft: Wrath Of The Linch King">
+                <span>World Of Warcraft: </span><span class="name-game">Wrath Of The Linch King</span>
+                <a href="{% url 'gallery:warcraft' %}"><div class="buy buy-new">Buy</div></a>
+            </div>
+        </div>
+
+
+    <!-- Testimonial -->
+        <div class="testimonial">
+            <span id="testimonial">Testimonial</span>
+            <img src="/static/shop_games/img/ikonka_2_349.png" alt="ikonka">
+            <p>Donec feugiat tellus sem, laoreet iaculis orci lobortis vel. Sed sed luctus orci, at lacinia risus. Ut porttitor ante ac tincidunt elementum. Curabitur ex dolor, condimentum vitae <br>nunc vel, pulvinar semper justo. Vestibulum et aliquet magna, maximus dapibus enim. Vestibulum ex lectus, posuere eu viverra at, mattis et enim. Nam efficitur sem et lectus <br>fringilla, at pharetra nulla luctus. Nunc cursus, augue ac ultricies volutpat, neque erat congue justo, ac pretium tellus eros a neque. Integer ipsum sem, <br>consectetur a mollis ac, cursus eu ipsum.</p>
+            <span id="names">JOHN SMITH</span> <span id="prof"> - FOUNDER</span>
+        </div>
+
+{% include 'shop_games/includes/inc_event.html' %}
+
+{% include 'shop_games/includes/inc_team.html' %}
+    <!--Subscribe-->
+        <div class="subscribe">
+            <span>Subscribe with Us</span>
+            <form action="#">
+                <input type="text" placeholder="Email">
+                <input type="submit" value="Subscribe" name="send">
+            </form>
+        </div>
+    <!--Contacts-->
+        <h2>Contact Us</h2>
+        <div class="contacts-us">
+            <div class="contacts">
+                <span>Get in touch with us</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sheets
+                containing Lorem Ipsum passages sed do, At vero eos et accusamus et
+                iusto odio digs qui blanditiis
+                <br><br>
+                Leningradsky AVE 39, BLDG 79<br>
+                MOSCOW 125167, Russia
+                <br><br>
+                Telephone : +00 111 222 3333
+                <br><br>
+                FAX : +1 888 888 4444
+                <br><br>
+                Email : <span id="email">mail@example.com</span></p>
+            </div>
+            <form action="#">
+                <input type="text" placeholder="Name"><br>
+                <input type="text" placeholder="Email"><br>
+                <textarea rows="10" cols="45" name="text" placeholder="Message"></textarea><br>
+                <input type="submit" value="SUBMIT" name="send">
+
+            </form>
+        </div>
+    <!-- Карта -->
+        <div class="route-map">
+            <h2>Route Map</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2667.220857760278!2d37.53511782627126!3d55.79573036967516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b549c0ac2b5af5%3A0x4b7a44fd7798fe69!2sGeekBrains!5e0!3m2!1sru!2sru!4v1605984508514!5m2!1sru!2sru" width="1169" height="298" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+
+    <div class="clr"></div>
+{% endblock %}
