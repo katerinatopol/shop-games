@@ -2,24 +2,48 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'shop_games/index.html')
+    title = 'home'
+    context = {
+        'title': title,
+    }
+    return render(request, 'shop_games/index.html', context=context)
 
 
 def contacts(request):
-    return render(request, 'shop_games/contact.html')
+    title = 'contact us'
+    context = {
+        'title': title,
+    }
+    return render(request, 'shop_games/contact.html', context=context)
 
 
 def about(request):
-    return render(request, 'shop_games/about.html')
+    title = 'about us'
+    context = {
+        'title': title,
+    }
+    return render(request, 'shop_games/about.html', context=context)
 
 
 def services(request):
-    return render(request, 'shop_games/services.html')
+    title = 'services'
+    context = {
+        'title': title,
+    }
+    return render(request, 'shop_games/services.html', context=context)
 
 
 def news(request):
-    return render(request, 'shop_games/news.html')
+    title = 'news'
+    context = {
+        'title': title,
+    }
+    return render(request, 'shop_games/news.html', context=context)
 
 
 def team(request):
-    return render(request, 'shop_games/team.html')
+    title = 'team'
+    context = {
+        'title': title,
+    }
+    return render(request, 'shop_games/team.html', context=context)
