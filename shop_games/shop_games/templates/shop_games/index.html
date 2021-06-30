@@ -10,10 +10,10 @@
                         <p class="name-1">Historical
                         <p class="name-2">GAMES</p>
                     </div>
-                    <div class="vertical nav-line-img"><img src="/static/shop_games/img/tel_76.png" alt="tel"></div>
+                    <div class="vertical nav-line-img"><img src="{% static 'shop_games/img/tel_76.png' %}" alt="tel"></div>
                     <div class="vertical"><a class="telephon" href="tel:1234567890">+123 456 7890</a></div>
 
-                    <div class="vertical"><img src="/static/shop_games/img/email.png" alt="email"></div>
+                    <div class="vertical"><img src="{% static 'shop_games/img/email.png' %}" alt="email"></div>
                     <div class="vertical"><a class="email" href="mailto:info@example.com">info@example.com</a></div>
                     <div class="search1 vertical">
                         <div class="search">
@@ -24,14 +24,6 @@
 
                         </div>
                     </div>
-
-                    <!--<div class="search1 vertical">
-                        <div class="search">
-                            <a href="#">Search</a>
-                            <div><img src="img/search.png" alt="Search"></div>
-                        </div>
-                    </div>-->
-
                 </div>
             <!-- Содержание верхнего блока -->
             <div class="sitebar-content">
@@ -63,21 +55,21 @@
         <!-- Our Gallery -->
         <h2 style="margin-top: 95px;">Our Gallery</h2>
         <div class="our-gallery">
-            <div><img src="/static/shop_games/img/71Ivm50PP7L._SL1273_1024x1024@2x.jpg" alt="Assasin’s Creed: Rogue">
+            <div><img src="{% static 'shop_games/img/71Ivm50PP7L._SL1273_1024x1024@2x.jpg' %}" alt="Assasin’s Creed: Rogue">
                 <span>Assasin’s Creed: Rogue</span>
                 <a href="{% url 'gallery:assasin' %}"><div class="buy">Buy</div></a>
             </div>
-            <div><img src="/static/shop_games/img/51K8FfZ39aL.jpg" alt="">
+            <div><img src="{% static 'shop_games/img/51K8FfZ39aL.jpg' %}" alt="">
                 <span>Tomb Raider</span>
                 <a href="{% url 'gallery:tomb_raider' %}"><div class="buy">Buy</div></a>
             </div>
             <div>
-                <img src="/static/shop_games/img/fc0fe7ba3b8e092e2ae941b054852d47.jpg" alt="Ryse: Son Of Rome">
+                <img src="{% static 'shop_games/img/fc0fe7ba3b8e092e2ae941b054852d47.jpg' %}" alt="Ryse: Son Of Rome">
                 <span>Ryse: Son Of Rome</span>
                 <a href="{% url 'gallery:ryse' %}"><div class="buy">Buy</div></a>
             </div>
             <div>
-                <img src="/static/shop_games/img/91fvOxYmFnL.jpg" alt="World Of Warcraft: Wrath Of The Linch King">
+                <img src="{% static 'shop_games/img/91fvOxYmFnL.jpg' %}" alt="World Of Warcraft: Wrath Of The Linch King">
                 <span>World Of Warcraft: </span><span class="name-game">Wrath Of The Linch King</span>
                 <a href="{% url 'gallery:warcraft' %}"><div class="buy buy-new">Buy</div></a>
             </div>
@@ -87,7 +79,7 @@
     <!-- Testimonial -->
         <div class="testimonial">
             <span id="testimonial">Testimonial</span>
-            <img src="/static/shop_games/img/ikonka_2_349.png" alt="ikonka">
+            <img src="{% static 'shop_games/img/ikonka_2_349.png' %}" alt="ikonka">
             <p>Donec feugiat tellus sem, laoreet iaculis orci lobortis vel. Sed sed luctus orci, at lacinia risus. Ut porttitor ante ac tincidunt elementum. Curabitur ex dolor, condimentum vitae <br>nunc vel, pulvinar semper justo. Vestibulum et aliquet magna, maximus dapibus enim. Vestibulum ex lectus, posuere eu viverra at, mattis et enim. Nam efficitur sem et lectus <br>fringilla, at pharetra nulla luctus. Nunc cursus, augue ac ultricies volutpat, neque erat congue justo, ac pretium tellus eros a neque. Integer ipsum sem, <br>consectetur a mollis ac, cursus eu ipsum.</p>
             <span id="names">JOHN SMITH</span> <span id="prof"> - FOUNDER</span>
         </div>
