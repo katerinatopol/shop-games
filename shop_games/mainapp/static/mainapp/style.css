@@ -50,7 +50,7 @@
 }
 
 .discount1 {
-  background-image: url(/static/shop_games/img/pryamougolnik_25_1380.png);
+  background-image: url({% static 'shop_games/img/pryamougolnik_25_1380.png' %});
   width: 50%;
   min-width: 700px;
   height: 560px;
@@ -59,7 +59,7 @@
 }
 
 .discount2 {
-  background-image: url(/static/shop_games/img/pryamougolnik_25_1381.png);
+  background-image: url({% static 'shop_games/img/pryamougolnik_25_1381.png' %});
   width: 50%;
   min-width: 700px;
   height: 560px;

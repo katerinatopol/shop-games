@@ -1,11 +1,14 @@
 {% extends 'shop_games/base.html' %}
 {% load static %}
 
- {% block content %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'mainapp/style.css' %}" />
+{% endblock %}
+
+{% block content %}
 
 {% include 'shop_games/includes/inc_main_menu.html' %}
 
-# TODO сломалась верстка
         <!-- Our Gallery -->
         <h2 style="margin-top: 95px;">Our Gallery</h2>
         <div class="our-gallery margin-gallery">
