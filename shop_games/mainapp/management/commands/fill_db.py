@@ -6,6 +6,8 @@ from django.core.management.base import BaseCommand
 
 from mainapp.models import GamesCategory, Games, Image
 
+from authapp.models import ShopUser
+
 JSON_PATH = 'mainapp/jsons'
 
 
@@ -44,4 +46,4 @@ class Command(BaseCommand):
             new_category = Image(**image)
             new_category.save()
 
-        super_user = User.objects.create_superuser('admin', 'admin@geekshop.local', '123')
+        super_user = ShopUser.objects.create_superuser('admin', 'admin@geekshop.local', '123', age="30")
