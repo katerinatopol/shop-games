@@ -8,53 +8,76 @@
 {% block content %}
 
 {% include 'shop_games/includes/inc_main_menu.html' %}
-
+    <!--Menu-->
+    <div class="sitebar-content">
+        <div class="menu-contact">
+            <ul>
+                {% for category in categories %}
+                    <li><a href="#">{{category.name}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
         <!-- Our Gallery -->
         <h2 style="margin-top: 95px;">Our Gallery</h2>
+ # TODO отображать только товары категории
         <div class="our-gallery margin-gallery">
-            <div>
-                <img src="{% static 'shop_games/img/battle1.png' %}" alt="battlefield 1">
-                <span>battlefield 1</span>
-                <a href="#"><div class="buy">Buy</div></a>
-            </div>
-            <div>
-                <img src="{% static 'shop_games/img/battle2.png' %}" alt="star wars: Battlefront II">
-                <span>star wars: </span><span class="name-game">Battlefront II</span>
-                <a href="#"><div class="buy buy-new">Buy</div></a>
-            </div>
-            <div>
-                <img src="{% static 'shop_games/img/battle4.png' %}" alt="BATTLEFIELD 4">
-                <span>BATTLEFIELD 4</span>
-                <a href="#"><div class="buy">Buy</div></a>
-            </div>
-            <div>
-                <img src="{% static 'shop_games/img/WoT.png' %}" alt="world of tanks">
-                <span>world of tanks</span>
-                <a href="#"><div class="buy">Buy</div></a>
-            </div>
+            {% for game in games %}
+
+
+                    <div>
+                        <img src="/media/{{game.top_image}}" alt="{{game.name}}">
+                        <span>{{game.name}}<br>{{game.part}}</span>
+                        <a href="#"><div class="buy">Buy</div></a>
+                    </div>
+
+            {% endfor %}
         </div>
-        <div class="our-gallery margin-gallery">
-            <div>
-                <img src="{% static 'shop_games/img/assassin.png' %}" alt="assassin">
-                <span>assassin’s creed: </span><span class="name-game">Rogue</span>
-                <a href="{% url 'gallery:assasin' %}"><div class="buy buy-new">Buy</div></a>
-            </div>
-            <div>
-                <img src="{% static 'shop_games/img/honor.png' %}" alt="for honor">
-                <span>for honor</span>
-                <a href="#"><div class="buy">Buy</div></a>
-            </div>
-            <div>
-                <img src="{% static 'shop_games/img/WoW.png' %}" alt="world of warships">
-                <span>world of warships</span>
-                <a href="#"><div class="buy">Buy</div></a>
-            </div>
-            <div>
-                <img src="{% static 'shop_games/img/CoD.png' %}" alt="call of duty">
-                <span>call of duty:</span><span class="name-game">Infinite Warface</span>
-                <a href="#"><div class="buy buy-new">Buy</div></a>
-            </div>
-        </div>
+
+
+<!--            <div>-->
+<!--                <img src="{% static 'shop_games/img/battle1.png' %}" alt="battlefield 1">-->
+<!--                <span>battlefield 1</span>-->
+<!--                <a href="#"><div class="buy">Buy</div></a>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <img src="{% static 'shop_games/img/battle2.png' %}" alt="star wars: Battlefront II">-->
+<!--                <span>star wars: </span><span class="name-game">Battlefront II</span>-->
+<!--                <a href="#"><div class="buy buy-new">Buy</div></a>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <img src="{% static 'shop_games/img/battle4.png' %}" alt="BATTLEFIELD 4">-->
+<!--                <span>BATTLEFIELD 4</span>-->
+<!--                <a href="#"><div class="buy">Buy</div></a>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <img src="{% static 'shop_games/img/WoT.png' %}" alt="world of tanks">-->
+<!--                <span>world of tanks</span>-->
+<!--                <a href="#"><div class="buy">Buy</div></a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="our-gallery margin-gallery">-->
+<!--            <div>-->
+<!--                <img src="{% static 'shop_games/img/assassin.png' %}" alt="assassin">-->
+<!--                <span>assassin’s creed: </span><span class="name-game">Rogue</span>-->
+<!--                <a href="{% url 'gallery:assasin' %}"><div class="buy buy-new">Buy</div></a>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <img src="{% static 'shop_games/img/honor.png' %}" alt="for honor">-->
+<!--                <span>for honor</span>-->
+<!--                <a href="#"><div class="buy">Buy</div></a>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <img src="{% static 'shop_games/img/WoW.png' %}" alt="world of warships">-->
+<!--                <span>world of warships</span>-->
+<!--                <a href="#"><div class="buy">Buy</div></a>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <img src="{% static 'shop_games/img/CoD.png' %}" alt="call of duty">-->
+<!--                <span>call of duty:</span><span class="name-game">Infinite Warface</span>-->
+<!--                <a href="#"><div class="buy buy-new">Buy</div></a>-->
+<!--            </div>-->
+<!--        </div>-->
 
     <!--More games-->
         <a href="#"><div class="more-games">

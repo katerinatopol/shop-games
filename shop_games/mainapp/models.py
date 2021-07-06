@@ -43,10 +43,10 @@ class Games(models.Model):
         max_length=128,
         blank=True,
     )
-    image = models.ImageField(
-        upload_to='product_images',
+    top_image = models.ImageField(
+        upload_to='top_product_images',
         blank=True,
-        verbose_name='изображение',
+        verbose_name='обложка',
     )
     short_desc = models.CharField(
         verbose_name='краткое описание',
@@ -64,8 +64,12 @@ class Games(models.Model):
         default=0,
     )
 
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(
+        auto_now_add=True
+    )
+    updated = models.DateTimeField(
+        auto_now=True
+    )
 
     def __str__(self):
         return self.name or f"Game with id - {self.pk}"
@@ -73,3 +77,27 @@ class Games(models.Model):
     class Meta:
         verbose_name = 'игра'
         verbose_name_plural = 'игры'
+
+
+class Image(models.Model):
+    game = models.ForeignKey(
+        Games,
+        on_delete=models.CASCADE,
+        verbose_name='игра',
+    )
+    image = models.ImageField(
+        upload_to='product_images',
+        blank=True,
+        verbose_name='изображениe',
+    )
+
+    created = models.DateTimeField(
+        auto_now_add=True
+    )
+    updated = models.DateTimeField(
+        auto_now=True
+    )
+
+    class Meta:
+        verbose_name = 'изображение'
+        verbose_name_plural = 'изображения для игр'

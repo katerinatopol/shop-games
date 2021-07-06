@@ -1,10 +1,15 @@
 from django.shortcuts import render
+from mainapp.models import Games, GamesCategory
 
 
 def gallery(request):
     title = 'gallery'
+    games = Games.objects.all()
+    categories = GamesCategory.objects.all()
     context = {
         'title': title,
+        'games': games,
+        'categories': categories,
     }
     return render(request, 'mainapp/gallery.html', context=context)
 
