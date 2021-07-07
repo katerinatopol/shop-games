@@ -28,6 +28,7 @@ urlpatterns = [
     path('news/', news, name="news"),
     path('team/', team, name="team"),
     path('gallery/', include('mainapp.urls', namespace="gallery")),
+    path('auth/', include('authapp.urls', namespace='auth')),
 ]
 
 if settings.DEBUG:
