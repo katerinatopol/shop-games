@@ -38,6 +38,18 @@ def gallery(request, pk=None):
 
     return render(request=request, template_name='mainapp/gallery.html', context=context)
 
+
+def game(request, pk):
+    title = 'game'
+
+    context = {
+        'title': title,
+        'links_menu': GamesCategory.objects.all(),
+        'game': get_object_or_404(Games, pk=pk),
+        #'basket': get_basket(request.user),
+    }
+
+    return render(request, 'mainapp/base_game.html', context)
 #
 # def assasin(request):
 #     title = "assasin's creed"

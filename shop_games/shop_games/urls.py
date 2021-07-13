@@ -22,12 +22,15 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
+
     path('contacts/', contacts, name="contacts"),
     path('about/', about, name="about"),
     path('services/', services, name="services"),
     path('news/', news, name="news"),
     path('team/', team, name="team"),
+
     path('gallery/', include('mainapp.urls', namespace="gallery")),
+    path('basket/', include('basketapp.urls', namespace='basket')),
     path('auth/', include('authapp.urls', namespace='auth')),
 ]
 

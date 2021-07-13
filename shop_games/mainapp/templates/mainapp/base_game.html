@@ -26,13 +26,13 @@
 
 
             <div class="text">
-                <span class="discount-games-black">{% block name %}{% endblock %}</span>
-                <p class="discount-games">{% block part %}{% endblock %}</p>
-                <span class="discount-price">${% block price %}{% endblock %}</span>
+                <span class="discount-games-black">{{game.name}}</span>
+                <p class="discount-games">{{game.part}}</p>
+                <span class="discount-price">{{game.price}}</span>
                 <a href="#">
                     <div class="buy-product">Buy</div>
                 </a>
-                <p class="description1">{% block description %}{% endblock %}</p>
+                <p class="description1">{{game.description}}</p>
             </div>
         </div>
 
