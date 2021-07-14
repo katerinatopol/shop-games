@@ -49,6 +49,12 @@
                                   <a href="{% url 'auth:login' %}">Sign in</a>
                                 {% endif %}
                             </li>
+                        <li><a href="{% url 'basket:view' %}" class="basket">
+                            <span>
+                            {% if basket %} {{ basket|length }} {% endif %}
+                            </span>
+                            Корзина здесь
+                        </a></li>
                 </ul>
                     </div>
 
@@ -72,21 +78,21 @@
         <div class="our-gallery">
             <div><img src="{% static 'shop_games/img/71Ivm50PP7L._SL1273_1024x1024@2x.jpg' %}" alt="Assasin’s Creed: Rogue">
                 <span>Assasin’s Creed: Rogue</span>
-                <a href="{% url 'gallery:assasin' %}"><div class="buy">Buy</div></a>
+                <a href="#"><div class="buy">Buy</div></a>
             </div>
             <div><img src="{% static 'shop_games/img/51K8FfZ39aL.jpg' %}" alt="">
                 <span>Tomb Raider</span>
-                <a href="{% url 'gallery:tomb_raider' %}"><div class="buy">Buy</div></a>
+                <a href="#"><div class="buy">Buy</div></a>
             </div>
             <div>
                 <img src="{% static 'shop_games/img/fc0fe7ba3b8e092e2ae941b054852d47.jpg' %}" alt="Ryse: Son Of Rome">
                 <span>Ryse: Son Of Rome</span>
-                <a href="{% url 'gallery:ryse' %}"><div class="buy">Buy</div></a>
+                <a href="#"><div class="buy">Buy</div></a>
             </div>
             <div>
                 <img src="{% static 'shop_games/img/91fvOxYmFnL.jpg' %}" alt="World Of Warcraft: Wrath Of The Linch King">
                 <span>World Of Warcraft: </span><span class="name-game">Wrath Of The Linch King</span>
-                <a href="{% url 'gallery:warcraft' %}"><div class="buy buy-new">Buy</div></a>
+                <a href="#"><div class="buy buy-new">Buy</div></a>
             </div>
         </div>
 

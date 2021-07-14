@@ -1,10 +1,15 @@
 from django.shortcuts import render, get_object_or_404
-from mainapp.models import Games, GamesCategory
+
+from basketapp.models import Basket
+from mainapp.models import Games, GamesCategory, Image
 
 
 def gallery(request, pk=None):
     title = 'gallery'
-    # basket = get_basket(request.user)
+    basket = []
+    if request.user.is_authenticated:
+        basket = Basket.objects.filter(user=request.user)
+
     games = Games.objects.all()
     links_menu = GamesCategory.objects.all()
     games = Games.objects.all().order_by('price')
@@ -33,7 +38,7 @@ def gallery(request, pk=None):
         #'hot_product': hot_product,
         #'same_products': same_products,
         'games': games,
-        #'basket': basket,
+        'basket': basket,
     }
 
     return render(request=request, template_name='mainapp/gallery.html', context=context)
@@ -41,71 +46,18 @@ def gallery(request, pk=None):
 
 def game(request, pk):
     title = 'game'
+    link_img = Image.objects.filter(game__pk=pk)
+
+    basket = []
+    if request.user.is_authenticated:
+        basket = Basket.objects.filter(user=request.user)
 
     context = {
         'title': title,
         'links_menu': GamesCategory.objects.all(),
         'game': get_object_or_404(Games, pk=pk),
+        'link_img': link_img,
         #'basket': get_basket(request.user),
     }
 
     return render(request, 'mainapp/base_game.html', context)
-#
-# def assasin(request):
-#     title = "assasin's creed"
-#     links_img = [
-#         "/static/mainapp/img/assassin/assassin_1.jpg",
-#         "/static/mainapp/img/assassin/assassin_2.jpg",
-#         "/static/mainapp/img/assassin/assassin_3.jpg",
-#         "/static/mainapp/img/assassin/assassin_4.jpg"
-#     ]
-#     context = {
-#         'title': title,
-#         'links_img': links_img,
-#     }
-#     return render(request, "mainapp/assasin's_creed.html", context=context)
-#
-#
-# def ryse(request):
-#     title = 'ryse: son of rome'
-#     links_img = [
-#         "/static/mainapp/img/ryse/ryse_1.jpg",
-#         "/static/mainapp/img/ryse/ryse_2.jpg",
-#         "/static/mainapp/img/ryse/ryse_3.jpg",
-#         "/static/mainapp/img/ryse/ryse_4.jpg",
-#     ]
-#     context = {
-#         'title': title,
-#         'links_img': links_img,
-#     }
-#     return render(request, 'mainapp/ryse.html', context=context)
-#
-#
-# def tomb_raider(request):
-#     title = 'tomb raider'
-#     links_img = [
-#         "/static/mainapp/img/tomb_raider/tr_1.jpg",
-#         "/static/mainapp/img/tomb_raider/tr_2.jpg",
-#         "/static/mainapp/img/tomb_raider/tr_3.jpg",
-#         "/static/mainapp/img/tomb_raider/tr_4.jpg",
-#     ]
-#     context = {
-#         'title': title,
-#         'links_img': links_img,
-#     }
-#     return render(request, 'mainapp/tomb_raider.html', context=context)
-#
-#
-# def warcraft(request):
-#     title = 'world of warcraft'
-#     links_img = [
-#         "/static/mainapp/img/world_of_warcraft/wow_1.jpg",
-#         "/static/mainapp/img/world_of_warcraft/wow_2.jpg",
-#         "/static/mainapp/img/world_of_warcraft/wow_3.jpg",
-#         "/static/mainapp/img/world_of_warcraft/wow_4.jpg",
-#     ]
-#     context = {
-#         'title': title,
-#         'links_img': links_img,
-#     }
-#     return render(request, 'mainapp/warcraft.html', context=context)

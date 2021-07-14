@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     'mainapp',
     'authapp',
-    'basketapp'
+    'basketapp',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +128,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "shop_games", "static"),
     os.path.join(BASE_DIR, "mainapp", "static"),
+
 )
 
 MEDIA_URL = '/media/'
