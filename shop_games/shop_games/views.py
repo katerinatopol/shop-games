@@ -1,16 +1,21 @@
 from django.shortcuts import render
 
 from basketapp.models import Basket
+from mainapp.views import get_basket, get_hot_games
 
 
 def index(request):
     title = 'home'
-    basket = []
-    if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
+    basket = get_basket(request.user)
+    # basket = []
+    # if request.user.is_authenticated:
+    #     basket = Basket.objects.filter(user=request.user)
+
+    hot_games = get_hot_games()
 
     context = {
         'title': title,
+        'hot_games': hot_games,
         'basket': basket,
     }
     return render(request, 'shop_games/index.html', context=context)
