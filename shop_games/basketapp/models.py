@@ -18,3 +18,18 @@ class Basket(models.Model):
         verbose_name='время',
         auto_now_add=True,
     )
+    @property
+    def product_cost(self):
+        return self.game.price
+
+    @property
+    def total_quantity(self):
+        _items = Basket.objects.filter(user=self.user)
+        _total_quantity = len(Basket.objects.all())
+        return _total_quantity
+
+    @property
+    def total_cost(self):
+        _items = Basket.objects.filter(user=self.user)
+        _total_cost = sum(list(map(lambda x: x.product_cost, _items)))
+        return _total_cost
