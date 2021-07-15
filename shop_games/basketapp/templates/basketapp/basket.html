@@ -9,15 +9,24 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Продукт</th>
+                  <th scope="col">Game</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Delete</th>
                 </tr>
               </thead>
               <tbody>
               {% for item in basket %}
                   <tr>
                       <th scope="row">{{ forloop.counter }}</th>
-                      <td>{{ item.name }}</td>
-                      <td>{{ item.price }}</td>
+                      <td>{{ item.game }}</td>
+                      <td>{{ item.game.price }}</td>
+                      <td>
+                          <button class="btn btn-round">
+                            <a href="{% url 'basket:remove' item.pk %}" class="">
+                            удалить
+                            </a>
+                          </button>
+                      </td>
                   </tr>
               {% endfor %}
 

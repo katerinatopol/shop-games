@@ -7,7 +7,7 @@ from mainapp.models import Games
 
 def basket(request):
     if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
+        basket = Basket.objects.filter(user=request.user).order_by('game__category')
         context = {
             'basket': basket
         }
@@ -30,4 +30,7 @@ def basket_add(request, pk):
 
 
 def basket_remove(request, pk):
-    return render(request, 'basketapp/basket.html')
+    basket_record = get_object_or_404(Basket, pk=pk)
+    basket_record.delete()
+
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
