@@ -25,7 +25,7 @@ class Basket(models.Model):
     @property
     def total_quantity(self):
         _items = Basket.objects.filter(user=self.user)
-        _total_quantity = len(Basket.objects.all())
+        _total_quantity = len(_items)
         return _total_quantity
 
     @property

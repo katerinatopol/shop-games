@@ -68,17 +68,17 @@ def gallery(request, pk=None):
 def game(request, pk):
     title = 'game'
     link_img = Image.objects.filter(game__pk=pk)
-
-    basket = []
-    if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
+    #
+    # basket = []
+    # if request.user.is_authenticated:
+    #     basket = Basket.objects.filter(user=request.user)
 
     context = {
         'title': title,
         'links_menu': GamesCategory.objects.all(),
         'game': get_object_or_404(Games, pk=pk),
         'link_img': link_img,
-        #'basket': get_basket(request.user),
+        'basket': get_basket(request.user),
     }
 
     return render(request, 'mainapp/base_game.html', context)
