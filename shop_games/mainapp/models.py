@@ -18,6 +18,9 @@ class GamesCategory(models.Model):
     updated = models.DateTimeField(
         auto_now=True
     )
+    is_deleted = models.BooleanField(
+        default=False
+    )
 
     def __str__(self):
         return self.name or f"Game with id - {self.pk}"
@@ -69,6 +72,9 @@ class Games(models.Model):
     )
     updated = models.DateTimeField(
         auto_now=True
+    )
+    is_deleted = models.BooleanField(
+        default=False
     )
 
     def __str__(self):
