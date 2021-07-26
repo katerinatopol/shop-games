@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404
 
 from basketapp.models import Basket
 from mainapp.models import Games, GamesCategory, Image
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def get_basket(user):
@@ -25,7 +26,7 @@ def get_same_games(hot_product):
     return same_products
 
 
-def gallery(request, pk=None):
+def gallery(request, pk=None, page=1):
     title = 'gallery'
     basket = get_basket(request.user)
     # basket = []
@@ -36,16 +37,25 @@ def gallery(request, pk=None):
     games = Games.objects.all().order_by('price')
     if pk is not None:
         if pk == 0:
-            games = Games.objects.all().order_by('price')
+            games = Games.objects.filter(is_deleted=False, category__pk=pk).order_by('price')
             category = {'name': 'все'}
         else:
             category = get_object_or_404(GamesCategory, pk=pk)
-            games = Games.objects.filter(category__pk=pk).order_by('price')
+            games = Games.objects.filter(is_deleted=False, category__pk=pk).order_by('price')
+
+        paginator = Paginator(games, 2)
+
+        try:
+            products_paginator = paginator.page(page)
+        except PageNotAnInteger:
+            products_paginator = paginator.page(1)
+        except EmptyPage:
+            products_paginator = paginator.page(paginator.num_pages)
 
         context = {
             'title': title,
             'links_menu': links_menu,
-            'games': games,
+            'games': products_paginator,
             'category': category,
         }
         return render(request=request, template_name='mainapp/gallery.html', context=context)

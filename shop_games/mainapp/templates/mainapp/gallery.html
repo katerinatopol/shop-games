@@ -29,21 +29,41 @@
             </ul>
         </div>
     </div>
+
         <!-- Our Gallery -->
         <h2 style="margin-top: 95px;">Our Gallery</h2>
 
-        <div class="our-gallery margin-gallery">
-            {% for game in games %}
+            <div class="our-gallery margin-gallery">
+                            {% if category %}
+                    <h2>Категория: {{ category.name|title }}</h2>
+                {% endif %}
+                <div class="paginator">
+                  {% if gallery.has_previous %}
+                    <a href="{% url 'gallery:page' category.pk products.previous_page_number %}">
+                      <
+                    </a>
+                  {% endif %}
+                  <span class="current">
+                    страница {{ gallery.number }} из
+                    {{ gallery.paginator.num_pages }}
+                  </span>
+                  {% if gallery.has_next %}
+                    <a href="{% url 'products:page' category.pk products.next_page_number %}">
+                      >
+                    </a>
+                  {% endif %}
+                </div>
+<!--            {% for game in games %}-->
 
 
-                    <div>
-                        <a href="{% url 'gallery:games' game.pk %}"><img src="/media/{{game.top_image}}" alt="{{game.name}}"></a>
-                        <span>{{game.name}}<br>{{game.part}}</span>
-                        <a href="{% url 'basket:add' game.pk %}"><div class="buy">Buy</div></a>
-                    </div>
+<!--                    <div>-->
+<!--                        <a href="{% url 'gallery:games' game.pk %}"><img src="/media/{{game.top_image}}" alt="{{game.name}}"></a>-->
+<!--                        <span>{{game.name}}<br>{{game.part}}</span>-->
+<!--                        <a href="{% url 'basket:add' game.pk %}"><div class="buy">Buy</div></a>-->
+<!--                    </div>-->
 
-            {% endfor %}
-        </div>
+<!--            {% endfor %}-->
+<!--        </div>-->
 
 
 <!--            <div>-->
