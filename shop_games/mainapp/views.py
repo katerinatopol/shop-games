@@ -28,7 +28,7 @@ def get_same_games(hot_product):
 
 def gallery(request, pk=None, page=1):
     title = 'gallery'
-    basket = get_basket(request.user)
+    #basket = get_basket(request.user)
     # basket = []
     # if request.user.is_authenticated:
     #     basket = Basket.objects.filter(user=request.user)
@@ -69,7 +69,7 @@ def gallery(request, pk=None, page=1):
         'hot_games': hot_games,
         'same_games': same_games,
         'games': games,
-        'basket': basket,
+        # 'basket': basket,
     }
 
     return render(request=request, template_name='mainapp/gallery.html', context=context)
