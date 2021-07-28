@@ -6,7 +6,7 @@ from mainapp.views import get_basket, get_hot_games
 
 def index(request):
     title = 'home'
-    basket = get_basket(request.user)
+    # basket = get_basket(request.user)
     # basket = []
     # if request.user.is_authenticated:
     #     basket = Basket.objects.filter(user=request.user)
@@ -16,7 +16,7 @@ def index(request):
     context = {
         'title': title,
         'hot_games': hot_games,
-        'basket': basket,
+        #'basket': basket,
     }
     return render(request, 'shop_games/index.html', context=context)
 
