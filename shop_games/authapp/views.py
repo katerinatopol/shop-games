@@ -2,8 +2,20 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib import auth
 from django.urls import reverse
+from shop_games import settings
+from django.core.mail import send_mail
 
 from authapp.forms import ShopUserLoginForm, ShopUserRegisterForm, ShopUserEditForm
+
+def send_verify_email(user):
+    verify_link = reverse('auth:verify', args=[user.email, user.activation_key])
+
+    title = f'Активация на сайте, пользователя - {user.username}'
+
+    message = f'Для активации вашей учетной {user.email} записи, напортале {settings.DOMAIN_NAME}' \
+              f' перейдите по ссылке: \n{settings.DOMAIN_NAME}{verify_link}'
+
+    return send_mail(title, message, settings.EMAIL_HOST_USER, [user.email], fail_silently=False)
 
 
 def login(request):
