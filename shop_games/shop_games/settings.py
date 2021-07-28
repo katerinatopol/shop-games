@@ -69,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'mainapp.context_processors.basket',
             ],
         },
     },
@@ -153,7 +154,7 @@ DOMAIN_NAME = 'http://127.0.0.1:8000'
 # EMAIL_USE_SSL = False
 
 EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = '6138662d624633'
-EMAIL_HOST_PASSWORD = '9ec7547a94560f'
+EMAIL_HOST_USER = '80e6725cd9583b'
+EMAIL_HOST_PASSWORD = '9b12ab3c40d03f'
 EMAIL_PORT = '465'
 EMAIL_USE_TLS = True
